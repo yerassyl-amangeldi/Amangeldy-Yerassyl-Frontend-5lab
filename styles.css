@@ -1,0 +1,450 @@
+:root {
+  --background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  --text: #ffffff;
+  --primary: #ff6f61;
+  --secondary: #6b7280;
+  --card-bg: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='dark'] {
+  --background: linear-gradient(135deg, #0f2027 0%, #203a43 100%);
+  --text: #e5e7eb;
+  --primary: #ff6f61;
+  --secondary: #9ca3af;
+  --card-bg: rgba(0, 0, 0, 0.3);
+  --glass-bg: rgba(0, 0, 0, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--background);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--glass-border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.navbar-logo {
+  background: linear-gradient(45deg, #ff6f61, #ff9a76);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar-links a {
+  color: var(--text);
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--primary);
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbar-user span {
+  font-weight: 500;
+}
+
+.logout-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.logout-btn:hover {
+  transform: scale(1.05);
+  background: #ff5a4a;
+}
+
+.page {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  background: linear-gradient(45deg, #ff6f61, #ff9a76);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dashboard input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 20px;
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 25px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  color: var(--text);
+  font-size: 1rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease;
+}
+
+.dashboard input::placeholder {
+  color: var(--secondary);
+}
+
+.dashboard input:focus {
+  outline: none;
+  transform: scale(1.02);
+}
+
+.dashboard ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.dashboard li {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard li a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.dashboard li a:hover {
+  text-decoration: underline;
+}
+
+.project-details h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #ff6f61, #ff9a76);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.project-details h2 {
+  font-size: 1.8rem;
+  margin-top: 30px;
+  color: var(--text);
+}
+
+.project-details p {
+  font-size: 1.1rem;
+  color: var(--secondary);
+  margin-bottom: 20px;
+}
+
+.project-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.project-details li {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.project-details li:hover {
+  transform: translateY(-3px);
+}
+
+.task-form {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.task-form input,
+.task-form select,
+.task-form button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  color: var(--text);
+  font-size: 1rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease;
+}
+
+.task-form input::placeholder {
+  color: var(--secondary);
+}
+
+.task-form input:focus,
+.task-form select:focus {
+  outline: none;
+  transform: scale(1.02);
+}
+
+.task-form button {
+  background: var(--primary);
+  cursor: pointer;
+}
+
+.task-form button:hover {
+  transform: scale(1.05);
+  background: #ff5a4a;
+}
+
+.settings h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  background: linear-gradient(45deg, #ff6f61, #ff9a76);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.settings button {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  padding: 15px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 25px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.settings button:hover {
+  transform: scale(1.05);
+  background: var(--primary);
+}
+
+.error h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.error p {
+  font-size: 1.2rem;
+  color: var(--secondary);
+  text-align: center;
+}
+
+/* Обновим стили для .tasks */
+.tasks {
+  padding: 40px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: var(--text);
+}
+
+/* Стили для заголовка */
+.tasks h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  background: linear-gradient(45deg, #ff6f61, #ff9a76);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+/* Стили для сообщения "No tasks available" */
+.tasks .no-tasks {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Стили для списка задач */
+.tasks .task-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Стили для каждой задачи */
+.tasks .task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 15px 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tasks .task-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Стили для названия задачи */
+.tasks .task-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* Стили для выпадающего списка статусов */
+.tasks .status-select {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.tasks .status-select:focus {
+  outline: none;
+  transform: scale(1.02);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Стили для формы добавления задачи */
+.tasks .task-form {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+/* Стили для поля ввода */
+.tasks .task-input {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  font-size: 1rem;
+  width: 300px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.tasks .task-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.tasks .task-input:focus {
+  outline: none;
+  transform: scale(1.02);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Стили для кнопки добавления задачи */
+.tasks .add-task-btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(45deg, #ff6f61, #ff9a76);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.tasks .add-task-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Цветовая индикация статусов в выпадающем списке */
+.tasks .status-select option[value="In Progress"] {
+  background: rgba(255, 165, 0, 0.2);
+  color: #ffa500;
+}
+
+.tasks .status-select option[value="Completed"] {
+  background: rgba(0, 128, 0, 0.2);
+  color: #008000;
+}
+
+.tasks .status-select option[value="Planned"] {
+  background: rgba(128, 128, 128, 0.2);
+  color: #808080;
+}
+
+.tasks .status-select option[value="Active"] {
+  background: rgba(0, 191, 255, 0.2);
+  color: #00bfff;
+}
+
+.tasks .status-select option[value="Ongoing"] {
+  background: rgba(255, 105, 180, 0.2);
+  color: #ff69b4;
+}
